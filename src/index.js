@@ -8,6 +8,6 @@ console.log(third);
 
 //Authorized components only
 ReactDOM.render(
-  <App authorized={true} />,
+  <App />,
   document.getElementById('root')
 );

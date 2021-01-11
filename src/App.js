@@ -1,24 +1,23 @@
+import React, { useState } from "react";
 import './App.css';
 
-function SecretComponent() {
-  return (
-    <h1>This info is a secret.</h1>
-  );
-}
-
-function RegularComponent() {
-  return (
-    <h1>This info is a open for public.</h1>
-  );
-}
-
-//We passed properties in the App function and used authorized identifier
-function App({authorized}) {
+function App() {
+  const [emotion, setEmotion] = useState("happy");
+  console.log(emotion);
   return (
     <>
-      {authorized ? <SecretComponent /> : <RegularComponent />}
+      <h1>Current emotion is {emotion}. </h1>
+      <button onClick={()=> setEmotion("frustrated")}>
+        Frustrate
+        </button>
+        <button onClick={()=> setEmotion("happy")}>
+          Happy
+        </button>
+        <button onClick={()=> setEmotion("enthusiastic")}>
+          Enthuse
+        </button>
     </>
-  )
+  );
 }
 
 export default App;
